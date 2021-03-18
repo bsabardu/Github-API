@@ -1,0 +1,17 @@
+@use 'src/styles/vars';
+
+.repos {
+
+  &__list {
+    margin: 0 auto;
+  }
+
+ .repo {
+   
+    li {
+      text-align: unset;
+    }
+ }
+}
+
+

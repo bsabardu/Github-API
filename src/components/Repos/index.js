@@ -52,7 +52,7 @@ const Repos = ({
         <Message>
           <p className="repos__results"> La recherche a donné {results} résultats </p>
         </Message>
-        <Grid stackable columns={3}>
+        <Grid columns={3} doubling stackable>
           {repos.map((repo) => (
             <Grid.Column>
               <Repo
@@ -62,16 +62,18 @@ const Repos = ({
             </Grid.Column>
           ))}
         </Grid>
+        {(results > 9) && (
         <Grid columns={1}>
           <Grid.Column textAlign="center">
             <Button loading={loadingSeeMore} onClick={onClickSeeMore}>Voir plus</Button>
           </Grid.Column>
         </Grid>
+        )}
       </>
     )}
-    {!init && !repos && (
+    {!init && results === 0 && (
     <Segment>
-      <Header icon>
+      <Header icon textAlign="center">
         <Icon name="coffee" />
         Pas de résultat pour la recherche {inputLabel}
       </Header>

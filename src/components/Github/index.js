@@ -24,16 +24,18 @@ const Github = () => {
   const [nextPage, setNextPage] = useState(2); // page of github api result to get
 
   const handleSearch = () => {
-    setLoading(true);
-    axiosInstance.get(`repositories?q=${inputSearch}&sort=stars&order=desc&page=1&per_page=9`)
-      .then((response) => response.data)
-      .then((data) => {
-        setRepos(data.items);
-        setResults(data.total_count);
-        setInit(false);
-        setLoading(false);
-      })
-      .catch(console.error);
+    if (inputSearch !== '') {
+      setLoading(true);
+      axiosInstance.get(`repositories?q=${inputSearch}&sort=stars&order=desc&page=1&per_page=9`)
+        .then((response) => response.data)
+        .then((data) => {
+          setRepos(data.items);
+          setResults(data.total_count);
+          setInit(false);
+          setLoading(false);
+        })
+        .catch(console.error);
+    }
   };
 
   const handleInputChange = (event) => {

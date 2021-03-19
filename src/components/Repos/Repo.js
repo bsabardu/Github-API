@@ -13,7 +13,7 @@ const Repo = ({
 }) => {
   const { login, avatar_url: imageUrl } = owner;
   return (
-    <Card className="repo" href={url}>
+    <Card fluid className="repo" href={url}>
       <Image src={imageUrl} centered wrapped ui={false} />
       <Card.Content>
         <Card.Header>{name}</Card.Header>

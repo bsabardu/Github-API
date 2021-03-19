@@ -1,5 +1,6 @@
 {
-  "name": "react-modele",
+  "name": "github_api",
+  "main": "./dist/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
